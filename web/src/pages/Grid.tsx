@@ -80,7 +80,6 @@ function inBounds(grid: CellType[][], r: number, c: number) {
 }
 
 export default function Grid() {
-  const username = useMemo(() => localStorage.getItem("username") ?? "Player", []);
   const [grid, setGrid] = useState<CellType[][]>(() => load("grid", DEFAULT_GRID));
   const [moving, setMoving] = useState<boolean>(() => load("moving", false));
   const [message, setMessage] = useState<string>(() => load("message", "Ready for play"));

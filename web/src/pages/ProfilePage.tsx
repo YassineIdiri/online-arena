@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 import { useQuery } from "@apollo/client/react";
-import { LuRefreshCw, LuTrophy, LuCircle, LuMinus, LuHistory } from "react-icons/lu";
+import { LuTrophy, LuCircle, LuMinus, LuHistory } from "react-icons/lu";
 
 // --- LOGIQUE TECHNIQUE INCHANGÉE ---
 
