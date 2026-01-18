@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:16
+    container_name: onlinearena-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: onlinearena
+    ports:
+      - "5435:5432"   # HOST:CONTAINER
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

@@ -1,0 +1,64 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type AuthPayload {
+  accessToken: String!
+  user: UserModel!
+}
+
+input CreateGameInput {
+  result: Result!
+  score: Int!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type GameModel {
+  id: Int!
+  playedAt: DateTime!
+  result: Result!
+  score: Int!
+}
+
+input LoginInput {
+  name: String!
+  password: String!
+}
+
+type Mutation {
+  createGame(input: CreateGameInput!): GameModel!
+  login(input: LoginInput!): AuthPayload!
+  register(input: RegisterInput!): AuthPayload!
+}
+
+type Query {
+  myHistory: [GameModel!]!
+  myStats: Stats!
+}
+
+input RegisterInput {
+  name: String!
+  password: String!
+}
+
+enum Result {
+  draw
+  lose
+  win
+}
+
+type Stats {
+  draws: Int!
+  losses: Int!
+  wins: Int!
+}
+
+type UserModel {
+  createdAt: DateTime!
+  id: Int!
+  name: String!
+}
