@@ -36,7 +36,7 @@ export default function App() {
 
           {/* Protected */}
           <Route
-            path="/grid"
+            path="/arena"
             element={
               <ProtectedRoute>
                 <Grid />
