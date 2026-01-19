@@ -53,7 +53,7 @@ export default function Header() {
 
         {/* NAVIGATION */}
         <nav className="flex items-center gap-1 sm:gap-2 bg-white/5 rounded-full p-1 border border-white/5">
-          <NavLink to="/" className={(p) => cx(p)}>
+          <NavLink to="/arena" className={(p) => cx(p)}>
             <IoGameControllerOutline className="text-lg" />
             <span className="hidden sm:block">Arena</span>
           </NavLink>

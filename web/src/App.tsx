@@ -26,7 +26,7 @@ export default function App() {
           {/* Si connecté => "/" redirige vers "/grid" */}
           <Route
             path="/"
-            element={token ? <Navigate to="/grid" replace /> : <HomePage />}
+            element={token ? <Navigate to="/arena" replace /> : <HomePage />}
           />
 
           {/* Public */}
