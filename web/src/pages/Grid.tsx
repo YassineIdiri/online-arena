@@ -316,7 +316,7 @@ export default function Grid({ demo = false }: GridProps) {
             </div>
 
             {/* STATUS */}
-            <div className="rounded-2xl bg-white/5 pb-6 pt-5 px-6 border border-white/10 backdrop-blur-sm">
+            <div className="rounded-2xl bg-white/5 pb-6 px-6 border border-white/10 backdrop-blur-sm">
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">System Log</span>
               <div className="mt-2 flex items-center gap-3">
                 <div className={`h-2 w-2 rounded-full ${moving ? "bg-orange-500 animate-ping" : "bg-blue-500"}`} />
@@ -327,7 +327,7 @@ export default function Grid({ demo = false }: GridProps) {
             </div>
 
             {/* CONTROLS */}
-            <div className="rounded-2xl bg-[#111] p-6 border border-white/5 shadow-inner">
+            <div className="rounded-2xl bg-[#111] p-8 border border-white/5 shadow-inner">
               <div className="grid grid-cols-3 gap-3 max-w-[200px] mx-auto">
                 <div />
                 <button
