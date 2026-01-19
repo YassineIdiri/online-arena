@@ -22,7 +22,7 @@ import { HealthModule } from './health/health.module';
         autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
         sortSchema: true,
 
-        playground: false, // ✅ on n’utilise plus Playground
+        playground: false,
         introspection: config.get('NODE_ENV') !== 'production',
 
         plugins:
