@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Play, LogIn, ShieldCheck, Zap, Target } from "lucide-react";
+import { Play, LogIn, Zap, Target } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const icons = {
