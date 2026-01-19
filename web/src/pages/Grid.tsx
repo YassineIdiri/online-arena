@@ -254,10 +254,6 @@ export default function Grid({ demo = false }: GridProps) {
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 py-8 md:py-12">
         <div className="mb-6 flex items-center justify-between">
-          <div>
-            <p className="text-xs text-white/60">Capture 7 thieves. Avoid getting caught.</p>
-          </div>
-
           {demo && (
             <span className="rounded-full border border-amber-400/40 bg-amber-400/10 px-3 py-1 text-xs font-bold text-amber-200">
               DEMO MODE (no save)
