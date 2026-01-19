@@ -1,26 +1,48 @@
+// App.tsx
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ProfilePage from "./pages/ProfilePage";
 import Grid from "./pages/Grid";
+import HomePage from "./pages/HomePage";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import Header from "./components/Header";
+import Demo from "./pages/Demo";
 
 export default function App() {
   const location = useLocation();
 
-  // optionnel : cacher le header sur login/register si tu veux un écran clean
-  const hideHeader = location.pathname === "/login" || location.pathname === "/register";
+  const hideHeader =
+    location.pathname === "/login" || location.pathname === "/register";
+
+  const token = localStorage.getItem("token");
 
   return (
     <div className="min-h-screen">
       {!hideHeader && <Header />}
 
-      {/* Header fait h-14 (56px) et fixed => on push le contenu */}
       <main className={!hideHeader ? "pt-14" : ""}>
         <Routes>
+          {/* Si connecté => "/" redirige vers "/grid" */}
+          <Route
+            path="/"
+            element={token ? <Navigate to="/grid" replace /> : <HomePage />}
+          />
+
+          {/* Public */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/demo" element={<Demo />} />
+
+          {/* Protected */}
+          <Route
+            path="/grid"
+            element={
+              <ProtectedRoute>
+                <Grid />
+              </ProtectedRoute>
+            }
+          />
 
           <Route
             path="/profile"
@@ -31,18 +53,10 @@ export default function App() {
             }
           />
 
-          <Route
-            path="/"
-            element={
-              <ProtectedRoute>
-                <Grid />
-              </ProtectedRoute>
-            }
-          />
-
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
     </div>
   );
 }
+
