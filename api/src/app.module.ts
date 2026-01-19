@@ -9,6 +9,7 @@ import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin
 import { PrismaModule } from './prisma/prisma.module';
 import { AuthModule } from './auth/auth.module';
 import { GamesModule } from './games/games.module';
+import { HealthModule } from './health/health.module';
 
 @Module({
   imports: [
@@ -36,6 +37,8 @@ import { GamesModule } from './games/games.module';
     PrismaModule,
     AuthModule,
     GamesModule,
+    HealthModule,
   ],
 })
 export class AppModule {}
+
